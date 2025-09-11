@@ -58,3 +58,14 @@ Note: The package has a `prepare` script that runs `tsc` so installing from a Gi
 ## Notes
 - For large lists, provide a good `estimatedItemSize`.
 - All FlashList props pass through, so pagination and performance features remain functional.
+- IDs must be stable. Internally we use `props.getId` (if provided) or `item.id`/`item.key`. Avoid using index in your `keyExtractor`.
+- Do not double wrap items: `DraggableFlashList` already wraps rows with `DraggableItem`. If you prefer manual control, you can wrap yourself; the list will detect and not double-wrap.
+- Requires Reanimated + Gesture Handler properly configured in your app (plugin in Babel, and `react-native-gesture-handler` import first).
+- Auto-scroll during drag: when you drag an item near the top/bottom edge, the list will automatically scroll to reveal more items.
+
+### Auto-scroll configuration
+- autoScrollEnabled?: boolean — enable/disable auto-scroll (default: true)
+- autoScrollEdgeDistance?: number — distance from edges to start scrolling. If 0–1, treated as a fraction of viewport height (e.g., 0.2 = 20%); otherwise treated as pixels. If omitted, defaults to min(80, max(40, 0.2 * viewport)).
+- autoScrollMaxStep?: number — max pixels per frame to scroll while dragging (default: 24; clamped 1–64)
+
+Note: DraggableFlashList also sets scrollEventThrottle to 16 by default for responsive drag updates. You can override by passing scrollEventThrottle prop.

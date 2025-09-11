@@ -37,7 +37,7 @@ export type DraggableContextValue = {
     startIndexRef: React.MutableRefObject<number>;
     translationYRef: React.MutableRefObject<number>;
     beginDrag: (id: string) => void;
-    updateDrag: (translationY: number) => void;
+    updateDrag: (translationY: number, activeItemHeight?: number) => void;
     endDrag: () => void;
     dragCallbacksRef: React.MutableRefObject<DragCallbacks | undefined>;
     getPositionsSnapshot: () => PositionEntry[];

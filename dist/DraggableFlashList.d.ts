@@ -9,5 +9,8 @@ export type DraggableFlashListProps<T> = FlashListProps<T> & {
         ids: string[];
         data: T[];
     }) => void;
+    autoScrollEnabled?: boolean;
+    autoScrollEdgeDistance?: number;
+    autoScrollMaxStep?: number;
 };
 export declare function DraggableFlashList<T>(props: DraggableFlashListProps<T>): any;
