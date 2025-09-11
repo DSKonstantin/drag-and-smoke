@@ -1,0 +1,37 @@
+{
+  "author": "Konstantin Diachenko",
+  "license": "MIT",
+  "name": "drag-and-smoke",
+  "version": "1.0.0",
+  "description": "Draggable FlashList wrapper with Reanimated for React Native",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "repository": { "type": "git", "url": "https://github.com/DSKonstantin/drag-and-smoke" },
+  "homepage": "https://github.com/DSKonstantin/drag-and-smoke#readme",
+  "bugs": { "url": "https://github.com//drag-and-smoke/issues" },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "prepare": "tsc -p tsconfig.json"
+  },
+  "peerDependencies": {
+    "react": ">=17",
+    "react-native": ">=0.68",
+    "@shopify/flash-list": ">=1.6.0",
+    "react-native-reanimated": ">=3.0.0",
+    "react-native-gesture-handler": ">=2.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.3"
+  }
+}
